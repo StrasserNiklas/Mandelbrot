@@ -1,0 +1,15 @@
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\Mandelbrot.exe
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\Mandelbrot.deps.json
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\Mandelbrot.runtimeconfig.json
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\Mandelbrot.runtimeconfig.dev.json
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\Mandelbrot.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\Mandelbrot.pdb
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.csprojAssemblyReference.cache
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.Form1.resources
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.csproj.GenerateResource.cache
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.AssemblyInfoInputs.cache
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.AssemblyInfo.cs
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.csproj.CoreCompileInputs.cache
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.pdb
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.genruntimeconfig.cache
