@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Mandelbrot
 {
@@ -32,6 +33,8 @@ namespace Mandelbrot
             this.A += c.A;
             this.B += c.B;
         }
+
+        
     }
 
 }
