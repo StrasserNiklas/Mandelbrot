@@ -34,6 +34,8 @@ namespace Mandelbrot
             var json = JsonConvert.SerializeObject(new CalculationRequest() { Height = pictureBox1.Height, Width = pictureBox1.Width });
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
+            button1.Text = "LOADING";
+
             var response = await httpClient.PostAsync(mainServer, data);
             var responseString = await response.Content.ReadAsStringAsync();
 
@@ -55,76 +57,49 @@ namespace Mandelbrot
             //    bitmap.SetPixel(value.Result.Item1, value.Result.Item2, value.Result.Item3 < 100 ? Color.Black : Color.White);
             //}
 
+            pictureBox1.Image = bitmap;
+
+            button1.Text = "Reload";
+
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            var bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.Image = bitmap;
+
+            var mainServer = ConfigurationManager.AppSettings["mainServer"];
+
+            //var json = JsonConvert.SerializeObject(new CalculationRequest() { Height = 10, Width = 10 });
+            var json = JsonConvert.SerializeObject(new CalculationRequest() { Height = pictureBox1.Height, Width = pictureBox1.Width });
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            button1.Text = "LOADING";
+
+            var response = await httpClient.PostAsync(mainServer, data);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            var valueList = JsonConvert.DeserializeObject<List<TripleResult>>(responseString);
+            //var valueList = JsonConvert.DeserializeObject<List<TripleResultNew>>(responseString); // with triple
 
 
-            //Parallel.For(0, pictureBox1.Width, x =>
+            bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+
+            //dto
+            foreach (var value in valueList)
+            {
+                bitmap.SetPixel(value.X, value.Y, value.Iteration < 100 ? Color.Black : Color.White);
+            }
+
+            // try with triple
+            //foreach (var value in valueList)
             //{
-            //    for (int y = 0; y < pictureBox1.Height; y++)
-            //    {
-            //        double a = (double)(x - (pictureBox1.Width / 2)) / (double)(pictureBox1.Width / 4);
-            //        double b = (double)(y - (pictureBox1.Height / 2)) / (double)(pictureBox1.Height / 4);
-
-            //        var c = new Complex(a, b);
-            //        var z = new Complex(0, 0);
-
-            //        var iteration = 0;
-
-            //        do
-            //        {
-            //            iteration++;
-            //            z.Square();
-            //            z.Add(c);
-
-            //            if (z.Magnitude() > 2.0)
-            //            {
-            //                break;
-            //            }
-            //        }
-            //        while (iteration < 300);
-
-            //        lock (lockObject)
-            //        {
-            //            bitmap.SetPixel(x, y, iteration < 100 ? Color.Black : Color.White);
-            //        }
-            //    }
-            //});
+            //    bitmap.SetPixel(value.Result.Item1, value.Result.Item2, value.Result.Item3 < 100 ? Color.Black : Color.White);
+            //}
 
             pictureBox1.Image = bitmap;
 
-            // old code
-
-            //for (int x = 0; x < pictureBox1.Width; x++)
-            //{
-            //    for (int y = 0; y < pictureBox1.Height; y++)
-            //    {
-            //        double a = (double)(x - (pictureBox1.Width / 2)) / (double)(pictureBox1.Width / 4);
-            //        double b = (double)(y - (pictureBox1.Height / 2)) / (double)(pictureBox1.Height / 4);
-
-            //        var c = new Complex(a, b);
-            //        var z = new Complex(0, 0);
-
-            //        var iteration = 0;
-
-            //        do
-            //        {
-            //            iteration++;
-            //            z.Square();
-            //            z.Add(c);
-
-            //            if (z.Magnitude() > 2.0)
-            //            {
-            //                break;
-            //            }
-            //        } 
-            //        while (iteration < 300);
-
-            //        // 
-            //        bitmap.SetPixel(x, y, iteration < 100 ? Color.Black : Color.White);
-
-            //    }
-            //}
-
-            //pictureBox1.Image = bitmap;
+            button1.Text = "Reload";
         }
     }
 }
