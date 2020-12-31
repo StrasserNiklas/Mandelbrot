@@ -33,3 +33,4 @@ C:\Users\Nikolaus\source\repos\Mandelbrot\Worker\obj\Debug\netcoreapp3.1\Worker.
 C:\Users\Nikolaus\source\repos\Mandelbrot\Worker\obj\Debug\netcoreapp3.1\Worker.dll
 C:\Users\Nikolaus\source\repos\Mandelbrot\Worker\obj\Debug\netcoreapp3.1\Worker.pdb
 C:\Users\Nikolaus\source\repos\Mandelbrot\Worker\obj\Debug\netcoreapp3.1\Worker.genruntimeconfig.cache
+C:\Users\Nikolaus\source\repos\Mandelbrot\Worker\bin\Debug\netcoreapp3.1\Worker.dll.config

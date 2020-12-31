@@ -14,13 +14,12 @@ namespace Worker
         {
             Console.WriteLine("====== WORKER ======");
 
-            var sinkPort = ConfigurationManager.AppSettings.Get("sinkPort") ?? "80";
-            var ventilatorPort = ConfigurationManager.AppSettings.Get("ventilatorPort") ?? "4400";
+            var sinkPort = ConfigurationManager.AppSettings.Get("sinkPort") ?? "8088";
+            var ventilatorPort = ConfigurationManager.AppSettings.Get("ventilatorPort") ?? "400";
 
             using (var receiver = new PullSocket($">tcp://localhost:{sinkPort}"))
             using (var sender = new PushSocket($">tcp://localhost:{ventilatorPort}"))
             {
-                //process tasks forever
                 while (true)
                 {
                     string workload = receiver.ReceiveFrameString();
@@ -29,7 +28,7 @@ namespace Worker
                     string[] workLoadArray = workload.Split(',');
 
                     var calculator = new MandelbrotCalculator();
-                    var result = calculator.Calculate(Convert.ToInt32(workLoadArray[0]), Convert.ToInt32(workLoadArray[1]), Convert.ToInt32(workLoadArray[2]), 400);
+                    var result = calculator.Calculate(Convert.ToInt32(workLoadArray[2]), 400, Convert.ToInt32(workLoadArray[0]), Convert.ToInt32(workLoadArray[1]));
 
                     byte[] data;
                     BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -40,10 +39,12 @@ namespace Worker
                         data = memoryStream.ToArray();
                     }
 
-                    Console.WriteLine("Sending to Sink");
+                    Console.WriteLine("Sending");
                     sender.SendFrame(data);
                 }
             }
+
+            
         }
     }
 }

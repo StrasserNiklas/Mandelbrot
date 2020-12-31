@@ -31,19 +31,12 @@ namespace Mandelbrot
             InitializeComponent();
 
             this.bitmap = new Bitmap(400, 400);
-            //this.StartSink();
-            //this.StartCalculation();
+            Task.Run(this.StartCalculation);
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            this.StartCalculation();
-            this.StartSink();
-        }
-
-        private void StartSink()
-        {
-            var sinkPort = ConfigurationManager.AppSettings.Get("sinkPort") ?? "80";
+            var sinkPort = ConfigurationManager.AppSettings.Get("sinkPort") ?? "8088";
 
             Task.Run(() =>
             {
@@ -59,13 +52,12 @@ namespace Mandelbrot
 
                         sender.SendFrame(lower + "," + upper + "," + height);
                         upper += 10;
-
                     }
                 }
             });
         }
 
-        private async void StartCalculation()
+        private void StartCalculation()
         {
             /*
             var mainServer = ConfigurationManager.AppSettings["mainServer"];
@@ -77,47 +69,41 @@ namespace Mandelbrot
             var valueList = JsonConvert.DeserializeObject<List<TripleResult>>(responseString);
             */
 
-            await Task.Run(() =>
+            var ventilatorPort = ConfigurationManager.AppSettings.Get("ventilatorPort") ?? "400";
+
+            List<(int, int, int)> resultList = new List<(int, int, int)>();
+
+            //socket to receive messages on
+            using (var receiver = new PullSocket($"@tcp://localhost:{ventilatorPort}"))
             {
-                var ventilatorPort = ConfigurationManager.AppSettings.Get("ventilatorPort") ?? "4400";
-
-                List<(int, int, int)> resultList = new List<(int, int, int)>();
-
-                //socket to receive messages on
-                using (var receiver = new PullSocket($"@tcp://localhost:{ventilatorPort}"))
+                for (int taskNumber = 0; taskNumber < 400; taskNumber = taskNumber + 10)
                 {
-                    for (int taskNumber = 0; taskNumber < 400; taskNumber = taskNumber + 10)
+                    var workerDoneTrigger = receiver.ReceiveFrameBytes();
+                    List<(int, int, int)> gameField = null;
+                    BinaryFormatter binaryFormatter2 = new BinaryFormatter();
+
+                    using (var memoryStream2 = new MemoryStream(workerDoneTrigger))
                     {
-                        var workerDoneTrigger = receiver.ReceiveFrameBytes();
-                        List<(int, int, int)> gameField = null;
-                        BinaryFormatter binaryFormatter2 = new BinaryFormatter();
-
-                        using (var memoryStream2 = new MemoryStream(workerDoneTrigger))
-                        {
-                            gameField = (List<(int, int, int)>)binaryFormatter2.Deserialize(memoryStream2);
-                            resultList.AddRange(gameField);
-                        }
-
+                        gameField = (List<(int, int, int)>)binaryFormatter2.Deserialize(memoryStream2);
+                        resultList.AddRange(gameField);
                     }
                 }
+            }
 
-                var valueList = resultList.Select(item => new TripleResult()
-                {
-                    X = item.Item1,
-                    Y = item.Item2,
-                    Iteration = item.Item3
-                }).ToList();
+            var valueList = resultList.Select(item => new TripleResult()
+            {
+                X = item.Item1,
+                Y = item.Item2,
+                Iteration = item.Item3
+            }).ToList();
 
-                //dto
-                foreach (var value in valueList)
-                {
-                    this.bitmap.SetPixel(value.X, value.Y, value.Iteration < 100 ? Color.Black : Color.White);
-                }
+            //dto
+            foreach (var value in valueList)
+            {
+                this.bitmap.SetPixel(value.X, value.Y, value.Iteration < 100 ? Color.Black : Color.White);
+            }
 
-                pictureBox1.Image = bitmap;
-            });
-
-
+            pictureBox1.Image = bitmap;
         }
 
         private async void Form1_Shown(object sender, EventArgs e)
@@ -159,5 +145,7 @@ namespace Mandelbrot
             */
 
         }
+
+        
     }
 }
