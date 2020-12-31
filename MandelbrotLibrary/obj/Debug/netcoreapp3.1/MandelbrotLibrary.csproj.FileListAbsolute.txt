@@ -1,7 +1,6 @@
 C:\Users\Nikolaus\source\repos\Mandelbrot\MandelbrotLibrary\bin\Debug\netcoreapp3.1\MandelbrotLibrary.deps.json
 C:\Users\Nikolaus\source\repos\Mandelbrot\MandelbrotLibrary\bin\Debug\netcoreapp3.1\MandelbrotLibrary.dll
 C:\Users\Nikolaus\source\repos\Mandelbrot\MandelbrotLibrary\bin\Debug\netcoreapp3.1\MandelbrotLibrary.pdb
-C:\Users\Nikolaus\source\repos\Mandelbrot\MandelbrotLibrary\obj\Debug\netcoreapp3.1\MandelbrotLibrary.csprojAssemblyReference.cache
 C:\Users\Nikolaus\source\repos\Mandelbrot\MandelbrotLibrary\obj\Debug\netcoreapp3.1\MandelbrotLibrary.AssemblyInfoInputs.cache
 C:\Users\Nikolaus\source\repos\Mandelbrot\MandelbrotLibrary\obj\Debug\netcoreapp3.1\MandelbrotLibrary.AssemblyInfo.cs
 C:\Users\Nikolaus\source\repos\Mandelbrot\MandelbrotLibrary\obj\Debug\netcoreapp3.1\MandelbrotLibrary.csproj.CoreCompileInputs.cache

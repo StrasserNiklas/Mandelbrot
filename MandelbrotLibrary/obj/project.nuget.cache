@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "m2N1odET0B0nmI9QnuEkFhla9rce/SwmkN5ZReohxmd4GR5rct2Rcl+bFU7VUxHmHjtS0gqXP6/Kfd3Ve1wJXg==",
+  "dgSpecHash": "+i1Q5laX4vpjYnV7Qme+BMrGxp/uncx9SJY3O6F6r3oO4PNyQiSOWmdZxZ8dtT2rVonwt788srv7J2obUEWxQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nikolaus\\source\\repos\\Mandelbrot\\MandelbrotLibrary\\MandelbrotLibrary.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\asyncio\\0.1.69\\asyncio.0.1.69.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\nacl.net\\0.1.13\\nacl.net.0.1.13.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\netmq\\4.0.1.6\\netmq.4.0.1.6.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\system.net.http.winhttphandler\\4.4.0\\system.net.http.winhttphandler.4.4.0.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\system.private.servicemodel\\4.4.0\\system.private.servicemodel.4.4.0.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\system.reflection.dispatchproxy\\4.4.0\\system.reflection.dispatchproxy.4.4.0.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\system.security.principal.windows\\4.4.0\\system.security.principal.windows.4.4.0.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\system.servicemodel.primitives\\4.4.0\\system.servicemodel.primitives.4.4.0.nupkg.sha512",
+    "C:\\Users\\Nikolaus\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

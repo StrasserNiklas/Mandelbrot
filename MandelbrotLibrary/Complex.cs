@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Mandelbrot
+namespace MandelbrotLibrary
 {
     public class Complex
     {
         public double A { get; set; }
         public double B { get; set; }
-        
+
         public Complex(double a, double b)
         {
             this.A = a;
@@ -34,7 +33,6 @@ namespace Mandelbrot
             this.B += c.B;
         }
 
-        
-    }
 
+    }
 }

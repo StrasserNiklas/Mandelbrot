@@ -18,3 +18,11 @@ C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\Man
 C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\MandelbrotLibrary.pdb
 C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.csproj.CoreCompileInputs.cache
 C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\obj\Debug\netcoreapp3.1\Mandelbrot.csproj.CopyComplete
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\AsyncIO.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\NaCl.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\NetMQ.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\System.Net.Http.WinHttpHandler.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\System.ServiceModel.Primitives.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Net.Http.WinHttpHandler.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Private.ServiceModel.dll
+C:\Users\Nikolaus\source\repos\Mandelbrot\Mandelbrot\bin\Debug\netcoreapp3.1\runtimes\win7\lib\netstandard2.0\System.Private.ServiceModel.dll
